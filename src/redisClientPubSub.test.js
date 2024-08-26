@@ -1,3 +1,4 @@
+const path = require('path');
 const fs = require('fs');
 const {createServer} = require('http');
 const redis = require('redis-v3');
@@ -182,7 +183,7 @@ describe('redis-adapter', () => {
                 partialDone();
             });
 
-            const data = fs.readFileSync('/Users/rod/Milanote/milanote/src/server/common/redis/5MB-min.json', 'utf8');
+            const data = fs.readFileSync(path.resolve(__dirname, '../5MB-min.json'), 'utf8');
 
             setIntervalLimited(
                 () => {
@@ -231,7 +232,7 @@ describe('redis-adapter', () => {
                 partialDone();
             });
 
-            const data = fs.readFileSync('/Users/rod/Milanote/milanote/src/server/common/redis/5MB-min.json', 'utf8');
+            const data = fs.readFileSync(path.resolve(__dirname, '../5MB-min.json'), 'utf8');
 
             setIntervalLimited(
                 () => {
